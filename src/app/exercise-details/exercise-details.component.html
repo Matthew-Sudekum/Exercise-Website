@@ -1,0 +1,8 @@
+<button (click)="goToExercises()">Back</button>
+<div class="card">
+    <p>exercise-details works!</p>
+    <p>Exercise: {{ exerciseId }}</p>
+</div>
+
+<button  *ngIf="notFirst()" (click)="goPrevious()">Previous</button>
+<button  *ngIf="notLast()" (click)="goNext()">Next</button>

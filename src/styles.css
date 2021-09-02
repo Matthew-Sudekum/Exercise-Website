@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+    color: hsl(28, 67%, 44%);
+}
+body {
+    background-color: hsl(74, 32%, 32%);
+    text-align: center;
+    font-family: 'Black Ops One', cursive;
+    letter-spacing: 0.1em;
+}
+div.card {
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto;
+    padding: 10px;
+    width: 600px;
+    border-radius: 7px;
+    box-shadow: 0 0 5px hsl(52, 94%, 94%);
+    background-color: hsl(88, 38%, 15%);
+}
