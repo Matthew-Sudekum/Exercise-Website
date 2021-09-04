@@ -3,12 +3,10 @@ div.nav {
     box-shadow: 0 0 5px hsl(52, 94%, 94%);
     background-color: hsl(88, 38%, 15%);
 }
-a {
+.nav a {
     margin: 0px 15px;
     text-align: center;
     vertical-align: middle;
     line-height: 7vh;
-}
-h1 {
-    display: inline;
+    font-size: 2.2em;
 }

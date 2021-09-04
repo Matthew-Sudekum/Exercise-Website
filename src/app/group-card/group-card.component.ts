@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { DATA } from '../../data';
-import { ExerciseCardComponent } from '../exercise-card/exercise-card.component';
 import { Exercise } from '../model/exercise';
 
 @Component({
@@ -20,6 +19,12 @@ export class GroupCardComponent implements OnInit {
 
   currentGroup!: string;
 
+  constructor() { }
+
+  ngOnInit(): void {
+    this.filterArray();
+  }
+  
   findGroups() {
     for(let obj of this.exercises){
       this.groups.push(obj.group);
@@ -30,11 +35,5 @@ export class GroupCardComponent implements OnInit {
     this.findGroups();
     this.distinctGroups = [...new Set(this.groups)];
   }
-
-  constructor() { }
-
-  ngOnInit(): void {
-    this.filterArray();
-  }
-
+  
 }

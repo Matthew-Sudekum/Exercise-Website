@@ -1,7 +1,25 @@
-button {
-    margin: 5px;
-    background-color: hsl(88, 38%, 15%);
-    border: 4px solid hsl(88, 38%, 15%);
-    box-shadow: 0 0 3px hsl(52, 94%, 94%);
-    border-radius: 5px;
+div.card {
+    margin: 0px auto;
+}
+h4 {
+    margin-top: 25px;
+}
+p {
+    margin-bottom: 0px;
+}
+img {
+    margin-top: 10px;
+    max-height: 500px;
+    border: inset 2px hsl(28, 67%, 44%);
+}
+div.video iframe{
+    border: none;
+}
+div.video{
+    margin: auto;
+    margin-bottom: 10px;
+    width: 576px;
+    height: 324px;
+    margin-top: 10px;
+    border: inset 2px hsl(28, 67%, 44%);
 }

@@ -10,10 +10,10 @@ import { DATA } from 'src/data';
 })
 export class ExerciseDetailsComponent implements OnInit {
 
+  exercises = DATA;
+
   @Input()
   exercise!: Exercise;
-
-  exercises = DATA;
 
   public exerciseId: any;
 
@@ -24,38 +24,36 @@ export class ExerciseDetailsComponent implements OnInit {
       let id = params.get('id');
       this.exerciseId = id;
     });
+    this.checkUrl();
   }
 
-  goPrevious() {
-    let previousId = this.exerciseId - 1;
-    this.router.navigate(['/exercises', previousId])
-  }
-
-  goNext() {
-    let nextId = +this.exerciseId + 1;
-    this.router.navigate(['/exercises', nextId])
-  }
-
-  goToExercises() {
-    let selectedId = this.exerciseId ? this.exerciseId : null;
-    this.router.navigate(['../'], {relativeTo: this.route});
-  }
-
-  notFirst(): boolean {
-    if(this.exerciseId > 1) {
-      return true;
+  checkUrl() {
+    let url: string = this.route.snapshot.url[1].path;
+    let charArray: any = url.split("");
+    let invalidUrl: boolean = false;
+    for(let char of charArray) {
+      if(isNaN(char)){
+        invalidUrl = true;
+      }
+      else { }
     }
-    else {
-      return false;
+    if (parseInt(url) < 1 || parseInt(url) > this.exercises.length){
+      invalidUrl = true;
     }
+    if(invalidUrl == true){
+      this.router.navigate(['/404', {id: url}]);
+    }
+    else { }
   }
 
-  notLast(): boolean {
-    if(this.exercises.length > this.exerciseId) {
-      return true;
+  assignExercise() {
+    this.exercise = this.exercises[this.exerciseId - 1];
+
+    //Check and define to avoid undefined error
+    if(this.exercise == undefined) {
+      this.exercise = this.exercises[0];
     }
-    else {
-      return false;
-    }
+    else { }
   }
+  
 }

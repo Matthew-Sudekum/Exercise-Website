@@ -8,6 +8,8 @@ import { GroupCardComponent } from './group-card/group-card.component';
 import { ExerciseDetailsComponent } from './exercise-details/exercise-details.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomeComponent } from './home/home.component';
+import { VideoUrlPipe } from './video-url.pipe';
+import { DetailsPageControlsComponent } from './details-page-controls/details-page-controls.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { HomeComponent } from './home/home.component';
     GroupCardComponent,
     ExerciseDetailsComponent,
     PageNotFoundComponent,
-    HomeComponent
+    HomeComponent,
+    VideoUrlPipe,
+    DetailsPageControlsComponent
   ],
   imports: [
     BrowserModule,

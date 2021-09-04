@@ -21,4 +21,5 @@ export class ExerciseCardComponent implements OnInit {
   onSelect(id: number) {
     this.router.navigate([id], {relativeTo: this.route});
   }
+  
 }
